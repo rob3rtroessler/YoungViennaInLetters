@@ -33,12 +33,8 @@ connection.end();*/
 
 app.get('/',function(req,res){
 
-  res.sendFile(__dirname + '/index2_withGrid.html');
+  res.sendFile(__dirname + '/index.html');
   //It will find and locate index.html from View or Scripts
-});
-
-app.get('/view2',function(req,res){
-  res.sendFile('/index1_beforeGrid.html');
 });
 
 let port = process.env.PORT;
