@@ -30,83 +30,101 @@
     <body>
 
     <!-- overall | bootstrap grid initialization -->
-    <div class="container-fluid" id="overall">
+    <div class="container-fluid" id="overall" style="height: 100vh">
 
         <!-- HEADING -->
-        <div class="row" style="background-color: rgba(195,196,192,0.46)"><h1>Networks in Letters2</h1></div>
+        <div class="row" style="height: 12.2vh;">
+            <div class="col-12" style="border-left: 1vh solid transparent; border-right: 1vh solid transparent; border-top: 1vh solid transparent;">
+                <div class="row" style="height:11vh; background-color: rgba(255,255,255,0.80); border: 3px solid rgba(38, 63, 143, 0.81); border-radius:5px; width: 100%; margin: 0">
+                    <h1>Networks in Letters</h1>
+                </div>
+            </div>
+
+        </div>
 
         <!-- APP -->
-        <div class="row" id="row-main" style="background-color: rgba(255,255,255,0.80)">
+        <div class="row" style="height: 85vh; overflow-y: hidden">
+            <div class="col-12" style="border: 1vh solid transparent; overflow-y: hidden">
 
-            <!-- left container | NodeInfo -->
-            <div class="col-md-3 sidebar collapsed" id="sidebar-left">
-                <div class="row" id="authorInfoImg" style="text-align: center"></div>
-                <div class ="row"><h3 id="authorInfoHeader"></h3></div>
-                <div class="row"><p id="authorInfoText"></p></div>
-            </div>
 
-            <!-- center container | ForceGraph -->
-            <div class="col-md-12" id="center">
+                <div class="row" id="row-main" style=" height: 83vh; background-color: rgba(255,255,255,0.80); border: 3px solid rgba(38, 63, 143, 0.81); border-radius: 5px;  width: 100%; padding: 0; margin: 0; overflow-y: hidden">
 
-                <!-- filtering container -->
-                <div class="row" style="background-color: rgba(255,255,255,0.4)">
-
-                    <!-- sliders for manipulating algorithm based on letter amounts, length and sentiment -->
-                    <div class="col-md-1"><div class="arrow-left"></div></div> <!-- placeholder -->
-                    <div class="col-md-1"><div id="numberOfLetters-sliderDiv" class="VerticalSlider"></div><h5># of Letters</h5></div>
-                    <div class="col-md-1"><div id="lengthOfLetters-sliderDiv" class="VerticalSlider"></div><h5>length of Letters</h5></div>
-                    <div class="col-md-1"><div id="sentimentOfLetters-sliderDiv" class="VerticalSlider"></div><h5>sentiment of Letters</h5></div>
-                    <div class="col-md-1"></div> <!-- placeholder -->
-                    <div class="col-md-6">
-
-                        <!-- filtering time -->
-                        <div class="row">
-                            <h3>filtering</h3>
-                            <div id="pips-range" style="margin-top: 10px; margin-bottom: 35px"></div>
-                        </div>
-
-                        <!-- selecting data set to be visualized -->
-                        <div class="row">
-
-                            <div class="row">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-2"><img src="img/YoungVienna.jpg" class="buttonIMG" onclick="selectExample(YoungViennaData, 1890, 1900)"></div>
-                                <div class="col-md-4"><h3> select a dataset </h3></div>
-                                <div class="col-md-2"><img src="img/Darwin.jpg" class="buttonIMG" onclick="selectExample(DarwinData, 1856, 1874)"></div>
-                            </div>
-                        </div>
+                    <!-- left container | NodeInfo -->
+                    <div class="col-md-3 sidebar collapsed" id="sidebar-left">
+                        <div class="row" id="authorInfoImg" style="text-align: center"></div>
+                        <div class ="row"><h3 id="authorInfoHeader"></h3></div>
+                        <div class="row"><p id="authorInfoText"></p></div>
                     </div>
-                    <div class="col-md-1"><div class="arrow-right"></div></div>
 
+                    <!-- center container | ForceGraph -->
+                    <div class="col-md-12" id="center" style="height: 82vh;">
+
+                        <!-- filtering container -->
+                        <div class="row" style="height: 22vh; background-color: rgba(255,255,255,0.4);">
+
+                            <!-- sliders for manipulating algorithm based on letter amounts, length and sentiment -->
+                            <div class="col-md-1"></div> <!-- placeholder -->
+                            <div class="col-md-1"><div id="numberOfLetters-sliderDiv" class="VerticalSlider"></div><h5># of Letters</h5></div>
+                            <div class="col-md-1"><div id="lengthOfLetters-sliderDiv" class="VerticalSlider"></div><h5>length of Letters</h5></div>
+                            <div class="col-md-1"><div id="sentimentOfLetters-sliderDiv" class="VerticalSlider"></div><h5>sentiment of Letters</h5></div>
+                            <div class="col-md-1"></div> <!-- placeholder -->
+                            <div class="col-md-6">
+
+                                <!-- filtering time -->
+                                <div class="row">
+                                    <h3>filtering</h3>
+                                    <div id="pips-range" style="margin-top: 10px; margin-bottom: 35px"></div>
+                                </div>
+
+                                <!-- selecting data set to be visualized -->
+                                <div class="row">
+
+                                    <div class="row">
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-2"><img src="img/YoungVienna.jpg" class="buttonIMG" onclick="selectExample(YoungViennaData, 1890, 1900)"></div>
+                                        <div class="col-md-4"><h3> select a dataset </h3></div>
+                                        <div class="col-md-2"><img src="img/Darwin.jpg" class="buttonIMG" onclick="selectExample(DarwinData, 1856, 1874)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"><div class="arrow-right"></div></div>
+
+                        </div>
+
+                        <!-- force graph container -->
+                        <div class="row" style="height: 60vh;">
+                            <div id="NetworkGraphDiv" style="width: 100%; height: 58vh"></div>
+                        </div>
+
+                    </div>
+
+                    <!-- right container | EdgeInfo -->
+                    <div class="col-md-3 sidebar collapsed" id="sidebar-right">
+
+                        <!-- sender chart -->
+                        <div id="sender" class="row authorInfoBar">
+                            <div class="col-md-3" id="senderPicture"></div>
+                            <div class="col-md-9" id="senderHeading" ></div>
+                        </div>
+
+                        <!-- recipient chart -->
+                        <div id="recipient" class="row authorInfoBar">
+                            <div class="col-md-3" id="recipientPicture"></div>
+                            <div class="col-md-9" id="recipientHeading"></div>
+                        </div>
+
+                        <!-- sentiment chart -->
+                        <div id="sentiment" class="row authorInfoBar">
+                            <div class="col-md-3" id="relationshipPic"></div>
+                            <div class="col-md-9" id="relationshipHeading">Relationship</div>
+                        </div>
+
+                        <!-- formula -->
+                        <div class="row" style="font-size: 9px">$$ y = {sentiment + \sqrt{(*letterLength)^2-letters} \over nonsense - time since last letter}$$</div>
+                    </div>
                 </div>
 
-                <!-- force graph container -->
-                <div id="NetworkGraphDiv" style="width: 100%; height: 500px"></div>
-            </div>
 
-            <!-- right container | EdgeInfo -->
-            <div class="col-md-3 sidebar collapsed" id="sidebar-right" style="background-color: rgba(255,255,255,0.4); border-left: thin solid rgba(158,158,158,0.40);">
-
-                <!-- sender chart -->
-                <div id="sender" class="row authorInfoBar">
-                    <div class="col-md-3" id="senderPicture"></div>
-                    <div class="col-md-9" id="senderHeading" ></div>
-                </div>
-
-                <!-- recipient chart -->
-                <div id="recipient" class="row authorInfoBar">
-                    <div class="col-md-3" id="recipientPicture"></div>
-                    <div class="col-md-9" id="recipientHeading"></div>
-                </div>
-
-                <!-- sentiment chart -->
-                <div id="sentiment" class="row authorInfoBar">
-                    <div class="col-md-3" id="relationshipPic"></div>
-                    <div class="col-md-9" id="relationshipHeading">Relationship</div>
-                </div>
-
-                <!-- formula -->
-                <div class="row" style="font-size: 9px">$$ y = {sentiment + \sqrt{(*letterLength)^2-letters} \over nonsense - time since last letter}$$</div>
             </div>
         </div>
     </div>

@@ -1,32 +1,31 @@
 h1 {
   text-align: center;
-  font-family: 'Crimson Text', serif;
-  font-weight: 200;
-  font-size: 50px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 6vh;
   margin-top: 1%;
   margin-bottom: 1%;
-  color: black;
+  color: rgb(49, 108, 172);
 }
-
 
 h2 {
   text-align: center;
-  font-family: 'Crimson Text', serif;
+  font-family: "Roboto", sans-serif;
   font-size: 50px;
   margin-bottom: 2%;
 }
 
 h3 {
   text-align: center;
-  font-family: 'Crimson Text', serif;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
 }
 
 h5 {
     text-align: left;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     font-size: 10px;
-    color: rgba(17, 20, 114, 0.8);
+    color: rgb(49, 108, 172)
 }
 
 /*#FDG-AuthorNetwork {
@@ -64,13 +63,7 @@ h5 {
     TEXT STYLES
 */
 
-h1 {
-  font-family: Roboto;
-  font-weight: 100;
-  text-align: center;
-  font-size: 50px;
-  margin-bottom: 2%;
-}
+
 
 h2 {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -94,15 +87,19 @@ h3{
 
 html,
 body {
+  height: 100vh;
+  overflow-x: hidden; /* necessary to hide collapsed sidebars */
+  overflow-y: hidden; /* necessary to hide collapsed sidebars */
+  width: 100vw;
+}
+
+#overall {
   height: 100%;
 }
 .jumbotron {
   margin-top: 30px;
 }
-#center,
-.sidebar {
-  min-height: 650px;
-}
+
 #row-main {
   overflow-x: hidden; /* necessary to hide collapsed sidebars */
 }
@@ -146,24 +143,15 @@ body {
 
 #sidebar-left{
   background-color: rgba(255,255,255,0.4);
-  border-right: thin solid rgba(158,158,158,0.40);)
+  border-right: thin solid rgba(49, 108, 172, 0.4);
+  height: 100%;
 }
 
-/*.arrow-left{
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-right:10px solid rgba(128, 118, 125, 0.55);
+#sidebar-right{
+  background-color: rgba(255,255,255,0.4);
+  border-left: thin solid rgba(49, 108, 172, 0.4);
+  height: 100%;
 }
-
-.arrow-right{
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid rgba(128, 118, 125, 0.55);
-}*/
 
 
 /*
